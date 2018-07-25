@@ -25,7 +25,7 @@ def main(server, log_dir, context):
 
     # Import data
     data_dir = './MNIST_DATA'
-    mnist = input_data.read_data_sets(data_dir, one_hot=True)
+    mnist = input_data.read_data_sets(data_dir, one_hot=True, source_url='file:///mnt/mesos/sandbox/dcos-tensorflow-tools-master/examples/source/gan/MNIST_data')
 
     with tf.device(tf.train.replica_device_setter(
                     worker_device="/job:worker/task:%d" %
